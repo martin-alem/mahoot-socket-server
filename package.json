@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "directories": {
-    "test": "test"
-  },
+  "type": "module",
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
