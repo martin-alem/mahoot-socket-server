@@ -9,6 +9,7 @@ import handleInitGame from "./controller/handleInitGame.js";
 // import cors from "./middleware/cors.js";
 // import authentication from "./middleware/authentication.js";
 
+//RYN6E8UaRySqn6r
 dotenv.config();
 
 const server = createServer();
@@ -31,6 +32,13 @@ webSocketServerInstance.on("connection", function connection(ws) {
       handleInitGame(ws, Rooms, msg);
     }
   });
+});
+
+server.on("request", (req, res) => {
+  res.writeHead(200, {
+    "Content-Type": "application/json",
+  });
+  res.end(JSON.stringify({ statusCode: 200, statusText: "OK", message: "This is a socket server" }));
 });
 
 server.on("upgrade", function (req, socket, head) {
